@@ -11,10 +11,20 @@ class IdeaStore
   def self.database
     return @database if @database
 
+    if ENV['RACK_ENV'] == 'development'
+
     @database = YAML::Store.new('db/ideabox')
     @database.transaction do
       @database['ideas'] ||= []
     end
+
+    elsif ENV['RACK_ENV'] == 'test'
+
+    @database = YAML::Store.new('db/ideabox-test')
+    @database.transaction do
+      @database['ideas'] ||= []
+    end
+
     @database
   end
 

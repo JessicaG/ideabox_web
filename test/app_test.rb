@@ -1,3 +1,5 @@
+ENV['RACK_ENV'] = 'test'
+
 require 'sinatra/base'
 require 'minitest/autorun'
 require 'minitest/pride'
@@ -28,5 +30,6 @@ describe IdeaBoxApp do
     assert last_response.ok?
     assert_equal "IdeaBox", html.css('h1').text
   end
+
 
 end
