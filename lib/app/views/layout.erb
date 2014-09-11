@@ -8,14 +8,16 @@
     <style>
       body {
       background-image:url('/assets/images/notebook.png');
-      /*image:url('/assets/images/IdeaBox-logo.png', width =500);*/
       }
     </style>
 
   </head>
   <body>
     <%= erb :_header %>
-    <%= yield %>
+    <div class='container'>
+        <img src="/assets/images/justin_bieber1.png" class="img" alt="Responsive image" align='right'>
+        <%= yield %>
+    </div>
 
   </body>
 </html>
