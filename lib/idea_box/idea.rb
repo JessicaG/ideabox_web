@@ -14,10 +14,6 @@ class Idea
     @tags        = attributes["tags"] || 0
   end
 
-  def save
-    IdeaStore.create(to_h)
-  end
-
   def to_h
     {
       "title" => title,
