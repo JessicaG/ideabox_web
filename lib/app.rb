@@ -8,7 +8,7 @@ class IdeaBoxApp < Sinatra::Base
   IdeaBox = IdeaStore.new('db/ideabox')
 
   get '/' do
-    erb :index, locals: { ideas: IdeaBox.all.sort, idea: Idea.new(params) }
+    erb :index
   end
 
   not_found do
