@@ -18,36 +18,5 @@
 </p>
 </form>
 </div>
-
-
-
-<h3>Existing Ideas</h3>
-
-<ul class="list-unstyled">
-  <% ideas.each do |idea| %>
-    <li>
-      <form action='/<%= idea.id %>/like' method='POST' style="display: inline" >
-        <button type = 'submit' class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-star"></span> Favorite
-        </button>
-
-
-      </form>
-      Title: <%= idea.title %><br/>
-      Tags: <%= idea.tags %><br/>
-      Description: <%= idea.description %><br/>
-      <a href="/<%= idea.id %>/edit" class="btn btn-default btn-sm">
-        <span class="glyphicon glyphicon-pencil"></span> Edit</a>
-
-      <form action='/<%= idea.id %>' method='POST' style="display: inline" >
-
-        <input type="hidden" name="_method" value="DELETE">
-
-        <button type="submit" class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-remove"></span> Remove
-        </button>
-
-      </form>
-    </li>
-  <% end %>
-</ul>
+<a href="/details" class="btn btn-default btn-sm">
+  <span class="glyphicon glyphicon-zoom-in"></span> View All Ideas</a>
